@@ -1,18 +1,18 @@
 <?php
 require "fungsi.php";
-if (isset($_POST["sumbit"])) {
+if (isset($_POST["submit"])) { // Corrected "sumbit" to "submit"
     //cek pengiriman data
     if (cekData($_POST) > 0) {
         echo "
         <script>
-		alert('data berhasil ditambahkan!!');
+		alert('Data berhasil ditambahkan!!');
 		document.location.href='index.php';
 		</script>
         ";
     } else {
         echo "
         <script>
-		alert('data gagal ditambahkan!!');
+		alert('Data gagal ditambahkan!!');
 		document.location.href='index.php';
 		</script>
         ";
@@ -20,49 +20,45 @@ if (isset($_POST["sumbit"])) {
 }
 
 ?>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>tambah data siswa</title>
+    <title>Tambah Data Siswa</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
-
 <body>
-    <h1>Tambah Data Siswa</h1>
-    <form action="" method="post">
-        <ul>
-            <li>
+    <div class="container mt-5">
+        <h1>Tambah Data Siswa</h1>
+        <form action="" method="post">
+            <div class="form-group">
                 <label for="nama">Nama Siswa</label>
-                <input type="text" name="nama" id="nama" required>
-            </li>
-            <li>
-                <label for="alamat">alamat Siswa</label>
-                <input type="text" name="alamat" id="alamat" required>
-            </li>
-            <li>
-                <label for="email">email Siswa</label>
-                <input type="email" name="email" id="email" required>
-            </li>
-        </ul>
-        <ul>
-            <li>
-                <label for="jk">jenis_kelamin</label>
-                <select name="jenis_kelamin" id="jk">
-                    <option value="laki_laki">laki_laki</option>
-                    <option value="perempuan">perempuan</option>
+                <input type="text" class="form-control" name="nama" id="nama" required>
+            </div>
+            <div class="form-group">
+                <label for="alamat">Alamat Siswa</label>
+                <input type="text" class="form-control" name="alamat" id="alamat" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Siswa</label>
+                <input type="email" class="form-control" name="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="jk">Jenis Kelamin</label>
+                <select class="form-control" name="jenis_kelamin" id="jk">
+                    <option value="laki_laki">Laki-laki</option>
+                    <option value="perempuan">Perempuan</option>
                 </select>
-            </li>
-        </ul>
-        <ul>
-            <li>
-                <button name="sumbit" type="submit">kirim</button>
-            </li>
-        </ul>
-
-    </form>
-
+            </div>
+            <button name="submit" type="submit" class="btn btn-primary">Kirim</button>
+        </form>
+    </div>
+    <!-- Include Bootstrap JS and jQuery (optional) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
-
 </html>
